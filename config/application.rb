@@ -20,6 +20,9 @@ module KindnessJar
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
 
+    config.filestack_rails.api_key = 'AlrG7BkeFT62p2UeBQ7vZz'
+    config.filestack_rails.client_name = 'kindness_jar'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

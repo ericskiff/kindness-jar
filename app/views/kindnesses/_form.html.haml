@@ -1,0 +1,16 @@
+= form_for @kindness do |f|
+  - if @kindness.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@kindness.errors.count, "error")} prohibited this kindness from being saved:"
+      %ul
+        - @kindness.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :act
+    = f.text_area :act
+  .field
+    = f.label :friend
+    = f.collection_select :friend_id, Friend.order(:name),:id,:name, include_blank: true
+  .actions
+    = f.submit 'Save'

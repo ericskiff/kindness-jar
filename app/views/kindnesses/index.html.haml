@@ -1,0 +1,15 @@
+%h1 Listing kindnesses
+
+%table.table
+
+  %tbody
+    - @kindnesses.each do |kindness|
+      %tr
+        %td= kindness.friend.name
+        %td= filestack_image(kindness.friend.picture, transform: filestack_transform.resize(width:100, height:100).enhance)
+        %td= kindness.act
+        
+
+%br
+
+= link_to 'New Kindness', new_kindness_path
